@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Grading System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <ul>
+        <li>Student Grading System</li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    
+    <form id="form">
+      <div id="input">
+      <input type="text" id="studentName" placeholder="Student Name">
+      <input type="number" id="studentId" placeholder="Student ID">
+      <input type="number" name="" id="studentGrade" placeholder="Grade" min="0" max="100">
+
+      <select name="subject" id="subject">
+        <option value="Math">Math</option>
+        <option value="Science">Science</option>
+        <option value="English">English</option>
+        <option value="History">History</option>
+      </select>
+      </div>
+
+      <div id="btn-div">
+        <button id="btn1" type="submit">Add Student</button>
+      </div>
+    </form>
+
+  </section>
+
+
+  <section id="displayArea">
+    <div>
+      <h3>Student List</h3>
+    </div>
+
+    <div>
+    <ul>
+      <li>Student Name</li>
+      <li>Student ID</li>
+      <li>Grade</li>
+      <li>Subject</li>
+    </ul>
+    </div>
+
+    <div>
+      <ul id="outputList">
+      </ul>
+    </div>
+      <!---data added dynamically-->
+
+  </section>
+
+
+  <section id="statisticsArea">
+    <div>
+      <h3>Statistics</h3>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
