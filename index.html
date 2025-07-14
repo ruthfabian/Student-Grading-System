@@ -20,7 +20,7 @@
     <form id="form">
       <div id="input">
       <input type="text" id="studentName" placeholder="Student Name">
-      <input type="number" id="studentId" placeholder="Student ID">
+      <input type="number" id="studentId" placeholder="Student ID" min="1">
       <input type="number" name="" id="studentGrade" placeholder="Grade" min="0" max="100">
 
       <select name="subject" id="subject">
@@ -41,10 +41,10 @@
 
   <section id="displayArea">
     <div>
-      <h3>Student List</h3>
+      <h3 class="text">Student List</h3>
     </div>
 
-    <div>
+    <div id="listHeader">
     <ul>
       <li>Student Name</li>
       <li>Student ID</li>
@@ -53,18 +53,18 @@
     </ul>
     </div>
 
-    <div>
+    <div id="outputArea">
       <ul id="outputList">
+        <!---data added dynamically-->
       </ul>
     </div>
-      <!---data added dynamically-->
 
   </section>
 
 
   <section id="statisticsArea">
     <div>
-      <h3>Statistics</h3>
+      <h3 class="text">Statistics</h3>
 
     </div>
 

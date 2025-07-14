@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  height: 100%;
+}
 
 body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,11 +15,12 @@ body{
 
 #header{
   display: flex;
-  background-color: white;
+  background-color: rgb(151, 51, 4);
   padding: 1dvh;
   color: rgb(171, 35, 244);
   font-size: 20px;
   padding-left: 5dvh;
+  font-weight: bold;
 
 }
 
@@ -29,8 +33,8 @@ body{
 }
 
 #hero{
+  padding-top: 2dvh;
   padding: 3dvh;
-   border-top: 1px black;
 }
 
 #form{
@@ -46,23 +50,31 @@ body{
 }
 
 #input input{
-  justify-content: space-around;
-  height: 4dvh;
-  width: 20dvh;
+  height: 6dvh;
+  width: 30dvh;
   border-radius: 5px;
   text-align: center;
   border: none;
   background-color: white;
+  color: rgb(171, 35, 244);
+  font-size: 16px;
 
 }
 
+#input input::placeholder
+{
+  color: rgb(171, 35, 244);
+  font-size: 12px;
+}
+
 select {
-  height: 4dvh;
-  width: 20dvh;
+  height: 6dvh;
+  width: 30dvh;
   text-align: center;
   background-color: white;
   color: rgb(171, 35, 244);
   border-radius: 5px;
+  font-size: 16px;
 
 }
 
@@ -70,14 +82,81 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3dvh;
 }
 
 #btn1{
   color: rgb(171, 35, 244) ;
   background-color: white;
   padding: 1dvh;
-  border: none;
+  border: 2px rgb(151, 51, 4) solid;
+  border-width: 2px;
   border-radius: 5px;
   text-align: center;
+  height: 6dvh;
+  width: 30dvh;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#btn1:hover{
+  background-color: rgb(151, 51, 4);
+  color: white;
+  transition: 0.3s;
+}
+
+.text{
+  text-align: center;
+  padding: 2dvh;
+  color: white;
+  font-size: 25px;
+}
+
+#listHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(151, 51, 4) ;
+}
+
+#listHeader ul{
+  display: flex;
+  list-style: none;
+}
+
+#listHeader ul li{
+  padding: 1dvh;
+  color: white;
+  font-size: 20px;
+  justify-content: space-around;
+  padding: 0 20dvh 0 20dvh;
+}
+
+#outputArea{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2dvh;
+  margin: 0 5dvh 0 5dvh;
+  background-color: white;
+  border-radius: 5px;
+  height: 50dvh;
+  text-align: left;
+}
+
+#outputList ul{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  text-align: left;
+}
+
+#outputList ul li{
+  display: flex;
+  justify-content: space-between;
+  padding: 1dvh;
+  color: rgb(151, 51, 4);
+  font-size: 16px;
+  border-bottom: 1px solid rgb(151, 51, 4);
 
 }
