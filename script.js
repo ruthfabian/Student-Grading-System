@@ -45,19 +45,18 @@ function addStudent(event)
 
 //function to update displayed list
 function updateDisplay(){
-  outputList.innerHTML = "";
+  outputArea.innerHTML = "";
 
   if(studentArray.length === 0){
-    outputList.innerHTML = "<p>No student data entered yet.</p>";
+    outputArea.innerHTML = "<p>No student data entered yet.</p>";
     return;
   }
 
   studentArray.forEach((item,index) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `<strong>${index + 1}.</strong> ${item.name}
-    ${item.id} ${item.grade} ${item.sub}`;
+    const listItem = document.createElement('ul');
+    listItem.innerHTML = `<li>${index + 1}.</li> <li class="items">${item.name}</li> <li class="items">${item.id}</li> <li class="items">${item.grade}</li> <li class="items">${item.sub}</li>`;
 
-    outputList.appendChild(listItem);
+    outputArea.appendChild(listItem);
   });
 
 }

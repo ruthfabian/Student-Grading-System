@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html{
   height: 100%;
 }
@@ -15,7 +16,7 @@ body{
 
 #header{
   display: flex;
-  background-color: rgb(151, 51, 4);
+  background-color: white;
   padding: 1dvh;
   color: rgb(171, 35, 244);
   font-size: 20px;
@@ -133,30 +134,35 @@ select {
 }
 
 #outputArea{
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 2dvh;
-  margin: 0 5dvh 0 5dvh;
+  margin-left: 5dvh;
+  margin-right: 5dvh;
   background-color: white;
   border-radius: 5px;
-  height: 50dvh;
-  text-align: left;
+  height: auto;
+  text-align: center;
 }
 
-#outputList ul{
+#outputArea ul{
   display: flex;
+  justify-content: center;
   list-style: none;
   width: 100%;
-  text-align: left;
+  text-align: center;
+  list-style: none;
 }
 
-#outputList ul li{
-  display: flex;
+#outputArea ul li{
   justify-content: space-between;
   padding: 1dvh;
   color: rgb(151, 51, 4);
   font-size: 16px;
-  border-bottom: 1px solid rgb(151, 51, 4);
 
+}
+
+.items{
+  width: 40%;
+  padding: 10dvh;
 }
