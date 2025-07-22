@@ -28,7 +28,7 @@ function addStudent(event)
   };
 
    studentArray.push(studentObject);
-   updateDisplay();
+   displayStudent();
 
    nameInput.value = "";
    idInput.value = "";
@@ -44,7 +44,7 @@ function addStudent(event)
 }
 
 //function to update displayed list
-function updateDisplay(){
+function displayStudent(){
   outputArea.innerHTML = "";
 
   if(studentArray.length === 0){
@@ -54,7 +54,9 @@ function updateDisplay(){
 
   studentArray.forEach((item,index) => {
     const listItem = document.createElement('ul');
-    listItem.innerHTML = `<li>${index + 1}.</li> <li class="items">${item.name}</li> <li class="items">${item.id}</li> <li class="items">${item.grade}</li> <li class="items">${item.sub}</li>`;
+    listItem.innerHTML = `<li>${index + 1}.</li> <li class="items">${item.name}</li> <li class="items">${item.id}</li>
+     <li class="items">${item.grade}</li> <li class="items">${item.sub}</li> 
+    <li class="items"><button id="deleteBtn" onclick="removeStudent(${index})">Delete</button></li>`;
 
     outputArea.appendChild(listItem);
   });
@@ -64,5 +66,14 @@ function updateDisplay(){
 //form submit event
 form.addEventListener('submit', addStudent)
 
-updateDisplay();
+displayStudent();
+
+//function to delete student list
+function removeStudent(index) {
+  studentArray.splice(index, 1);
+  displayStudent();
+}
+
+
+
 

@@ -139,6 +139,7 @@ select {
   padding: 2dvh;
   margin-left: 5dvh;
   margin-right: 5dvh;
+  padding-bottom: 20dvh;
   background-color: white;
   border-radius: 5px;
   height: auto;
@@ -162,7 +163,52 @@ select {
 
 }
 
+p {
+  color: rgb(151, 51, 4);
+  font-size: 16px;
+  text-align: center;
+}
+
 .items{
   width: 40%;
   padding: 10dvh;
+}
+
+#deleteBtn{
+  color: white;
+  background-color: rgb(151, 51, 4);
+  padding: 1dvh;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  #input{
+    align-items: center;
+    margin-left: 3dvh;
+  }
+
+  #input input, select{
+    width: 75%;
+    margin: 1dvh;
+  }
+
+  #input input::placeholder{
+    text-align: center;
+    padding-left: 1dvh;
+  }
+  #btn1{
+    width: 30%;
+  }
+
+  #listHeader ul li{
+    padding: 1dvh;
+    font-size: 16px;
+    padding: 0 4dvh 0 4dvh;
+  }
+
+
+
 }
