@@ -7,70 +7,95 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="header">
-    <nav>
-      <ul>
-        <li>Student Grading System</li>
-      </ul>
-    </nav>
-  </header>
+  <div id="content">
+   <header id="header">
+        <h1>Student Grading System</h1>
+   </header>
 
-  <section id="hero">
+    <section id="hero">
     
-    <form id="form">
-      <div id="input">
-      <input type="text" id="studentName" placeholder="Student Name">
-      <input type="number" id="studentId" placeholder="Student ID" min="1">
-      <input type="number" name="" id="studentGrade" placeholder="Grade" min="0" max="100">
+     <form id="form">
+       <div id="input">
+         <input type="text" id="studentName" placeholder="Student Name">
+         <input type="number" id="studentId" placeholder="Student ID" min="1">
+         <input type="number" name="" id="studentGrade" placeholder="Student Grade" min="0" max="100">
 
-      <select name="subject" id="subject">
-        <option value="Math">Math</option>
-        <option value="Science">Science</option>
-        <option value="English">English</option>
-        <option value="History">History</option>
-      </select>
+         <select name="subject" id="subject">
+           <option disabled selected>~Select Subject~</option>
+           <option value="Math">Math</option>
+           <option value="Science">Science</option>
+           <option value="English">English</option>
+           <option value="History">History</option>
+         </select>
+
+        </div>
+
+        <div id="btn-div">
+          <button id="btn1" type="submit">Add Student</button>
+        </div>
+     </form>
+
+    </section>
+
+   <section id="displayArea">
+      <div id="listHeader">
+
+        <table>
+          <tr>
+            <th>S/N</th>
+            <th>Student Name</th>
+            <th>Student ID</th>
+            <th>Grade</th>
+            <th>Grade Letter</th>
+            <th>Subject</th>
+            <th>Delete</th>
+          </tr>
+          <tbody id="outputList">
+          </tbody>
+              <!---data added dynamically-->
+      
+          
+             
+             
+        </table>
+
+        <!-----      <ul>
+         <li>S/N</li>
+         <li>Student Name</li>
+         <li>Student ID</li>
+         <li>Grade</li>
+         <li>Grade Letter</li>
+         <li>Subject</li>
+       </ul>
+      </div>
+        
+
+      <div id="outputArea">
+  
+  
+      </div>
+      -->
+
+
+    </section>
+
+
+   <section id="stat">
+      <div>
+       <button id="btn2">Calculate Statistics</button>
+
       </div>
 
-      <div id="btn-div">
-        <button id="btn1" type="submit">Add Student</button>
+      <div id="statisticsArea">
+
       </div>
-    </form>
 
-  </section>
+    </section>
 
+    
+ </div>
 
-  <section id="displayArea">
-    <div>
-      <h3 class="text">Student List</h3>
-    </div>
+ <script src="script.js"></script> 
 
-    <div id="listHeader">
-    <ul>
-      <li>Student Name</li>
-      <li>Student ID</li>
-      <li>Grade</li>
-      <li>Subject</li>
-    </ul>
-    </div>
-
-    <div id="outputArea">
-        <!---data added dynamically-->
-  
-    </div>
-
-  </section>
-
-
-  <section id="statisticsArea">
-    <div>
-      <h3 class="text">Statistics</h3>
-
-    </div>
-
-  </section>
-
-  <script src="script.js"></script>
-
-  
 </body>
 </html>

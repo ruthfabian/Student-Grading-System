@@ -12,70 +12,58 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background-color: rgb(171, 35, 244);
+  padding: 2em;
+}
+
+#content{
+  background-color: white;
+  border-radius: 1.5em;
 }
 
 #header{
   display: flex;
-  background-color: white;
-  padding: 1dvh;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
   color: rgb(171, 35, 244);
   font-size: 20px;
-  padding-left: 5dvh;
-  font-weight: bold;
-
 }
 
-#header ul{
-  list-style: none;
-}
-
-#header ul li{
-  list-style: none;
-}
-
-#hero{
-  padding-top: 10dvh;
-  padding: 3dvh;
-}
-
-#form{
- padding-left: 10dvh;
- padding-right: 10dvh;
- color: rgb(171, 35, 244);
-}
 
 #input{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 #input input{
-  height: 6dvh;
-  width: 30dvh;
+  height: 2.5em;
+  width: 33em;
   border-radius: 5px;
   text-align: center;
-  border: none;
+  margin-bottom: 2em;
   background-color: white;
   color: rgb(171, 35, 244);
   font-size: 16px;
+  border: 1px solid rgb(171, 35, 244);
 
 }
 
 #input input::placeholder
 {
   color: rgb(171, 35, 244);
-  font-size: 12px;
 }
 
 select {
-  height: 6dvh;
-  width: 30dvh;
   text-align: center;
   background-color: white;
   color: rgb(171, 35, 244);
   border-radius: 5px;
   font-size: 16px;
+  height: 2.5em;
+  width: 33em;
+  border: 1px solid rgb(171, 35, 244);
 
 }
 
@@ -83,89 +71,81 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3dvh;
 }
 
 #btn1{
-  color: rgb(171, 35, 244) ;
-  background-color: white;
+  color: white ;
+  background-color: rgb(171, 35, 244);
   padding: 1dvh;
-  border: 2px rgb(151, 51, 4) solid;
-  border-width: 2px;
+  border: none;
   border-radius: 5px;
   text-align: center;
-  height: 6dvh;
-  width: 30dvh;
+  height: 2.5em;
+  width: 33em;
   font-size: 16px;
   cursor: pointer;
-}
-
-#btn1:hover{
-  background-color: rgb(151, 51, 4);
-  color: white;
-  transition: 0.3s;
-}
-
-.text{
-  text-align: center;
-  padding: 2dvh;
-  color: white;
-  font-size: 25px;
+  margin-top: 2em;
 }
 
 #listHeader{
+  margin-top: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:rgb(151, 51, 4) ;
 }
 
+table tr th{
+  font-size: 18px;
+  background-color: rgb(171, 35, 244) ;
+  color: white;
+  width: 13em;
+}
+
+table tr td{
+  color: rgb(171, 35, 244);
+  width: 13em;
+}
+
+/*
 #listHeader ul{
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   list-style: none;
 }
 
 #listHeader ul li{
-  padding: 1dvh;
   color: white;
-  font-size: 20px;
-  justify-content: space-around;
-  padding: 0 20dvh 0 20dvh;
+  font-size: 18px;
 }
 
 #outputArea{
   justify-content: center;
   align-items: center;
-  padding: 2dvh;
-  margin-left: 5dvh;
-  margin-right: 5dvh;
-  padding-bottom: 20dvh;
-  background-color: white;
-  border-radius: 5px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   height: auto;
   text-align: center;
 }
 
 #outputArea ul{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   list-style: none;
-  width: 100%;
   text-align: center;
-  list-style: none;
 }
 
 #outputArea ul li{
-  justify-content: space-between;
-  padding: 1dvh;
-  color: rgb(151, 51, 4);
+  color: rgb(171, 35, 244);
   font-size: 16px;
 
 }
+*/
+
 
 p {
-  color: rgb(151, 51, 4);
-  font-size: 16px;
+  color: rgb(171, 35, 244);
+  font-size: 18px;
   text-align: center;
 }
 
@@ -176,38 +156,51 @@ p {
 
 #deleteBtn{
   color: white;
-  background-color: rgb(151, 51, 4);
-  padding: 1dvh;
+  background-color: rgb(171, 35, 244);
+  padding: 1em;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
+#stat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn2{
+  color: white ;
+  background-color: rgb(171, 35, 244);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  height: 2.5em;
+  width: 33em;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 2em;
+}
+
+#statisticsArea{
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 13em;
+  height: auto;
+  text-align: center;
+}
+
 
 @media (max-width: 768px) {
-  #input{
-    align-items: center;
-    margin-left: 3dvh;
-  }
+/*#listHeader ul li{
+font-size: 16px;
+}
+*/
 
-  #input input, select{
-    width: 75%;
-    margin: 1dvh;
-  }
-
-  #input input::placeholder{
-    text-align: center;
-    padding-left: 1dvh;
-  }
-  #btn1{
-    width: 30%;
-  }
-
-  #listHeader ul li{
-    padding: 1dvh;
-    font-size: 16px;
-    padding: 0 4dvh 0 4dvh;
-  }
+table tr th{
+  font-size: 16px;
+}
 
 
 

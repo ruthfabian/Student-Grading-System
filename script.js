@@ -3,7 +3,7 @@ const nameInput = document.getElementById('studentName');
 const idInput = document.getElementById('studentId');
 const gradeInput = document.getElementById('studentGrade');
 const subjectInput = document.getElementById('subject');
-const outputList = document.getElementById('outputList');
+const table = document.querySelector('table');
 
 //add student to array of object
 let studentArray = [];
@@ -43,22 +43,24 @@ function addStudent(event)
   }
 }
 
+//add array of object to table
+
 //function to update displayed list
 function displayStudent(){
-  outputArea.innerHTML = "";
+  outputList.innerHTML = "";
 
   if(studentArray.length === 0){
-    outputArea.innerHTML = "<p>No student data entered yet.</p>";
+    outputList.innerHTML = "<p>No student data entered yet.</p>";
     return;
   }
 
   studentArray.forEach((item,index) => {
-    const listItem = document.createElement('ul');
-    listItem.innerHTML = `<li>${index + 1}.</li> <li class="items">${item.name}</li> <li class="items">${item.id}</li>
-     <li class="items">${item.grade}</li> <li class="items">${item.sub}</li> 
-    <li class="items"><button id="deleteBtn" onclick="removeStudent(${index})">Delete</button></li>`;
+    const listItem = document.createElement('tr');
+    listItem.innerHTML = `<td>${index + 1}.</td> <td class="items">${item.name}</td> <td class="items">${item.id}</td>
+     <td class="items">${item.grade}</td> <td></td> <td class="items">${item.sub}</td> 
+    <td class="items"><button id="deleteBtn" onclick="removeStudent(${index})">Delete</button></td>`;
 
-    outputArea.appendChild(listItem);
+    outputList.appendChild(listItem);
   });
 
 }
