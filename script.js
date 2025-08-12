@@ -50,7 +50,7 @@ function displayStudent(){
   outputList.innerHTML = "";
 
   if(studentArray.length === 0){
-    outputList.innerHTML = "<p>No student data entered yet.</p>";
+    outputList.innerHTML = "<tr><td colspan='7' id="default">No student data entered yet.</td></tr>";
     return;
   }
 
