@@ -17,8 +17,12 @@
      <form id="form">
        <div id="input">
          <input type="text" id="studentName" placeholder="Student Name">
+
          <input type="number" id="studentId" placeholder="Student ID" min="1">
+         <div id="idError" class="error"></div>
+
          <input type="number" name="" id="studentGrade" placeholder="Student Grade" min="0" max="100">
+         <div id="gradeError" class="error"></div>
 
          <select name="subject" id="subject">
            <option disabled selected>~Select Subject~</option>

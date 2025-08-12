@@ -4,6 +4,8 @@ const idInput = document.getElementById('studentId');
 const gradeInput = document.getElementById('studentGrade');
 const subjectInput = document.getElementById('subject');
 const table = document.querySelector('table');
+const idMessage = document.getElementById('idError');
+const gradeMessage = document.getElementById('gradeError');
 
 
 //add student to array of object
@@ -67,14 +69,19 @@ function addStudent(event)
   else{
     alert('Please enter all the required fields.')
   }
+
+  if(studentIDLibrary[studentId]) {
+    idMessage.textContent = 'This student ID already exists. Please enter a unique ID.';
+    idMessage.style.color = 'red';
+    idMessage.style.display = 'block';
+  }
+  else {
+    studentIDLibrary[studentId] = stud; // Add student ID to library for uniqueness check
+    studentArray.push(stud);
+  }
 }
 
   /*
-  //add student id to library for uniqueness check
-  if(studentId) {
-    studentIDLibrary[studentId] = true;
-  }
-
 //add grade letter to student object
   if(studentGrade < 0 || studentGrade > 100) {  
     alert('Please enter a valid grade between 0 and 100.');
@@ -99,13 +106,13 @@ function displayStudent(){
   }
 
   studentArray.forEach((item,index) => {
-      const listItem = document.createElement('tr');
-      listItem.innerHTML = `<td>${index + 1}.</td> <td class="items">${item.name}</td> <td class="items">${item.id}</td>
-       <td class="items">${item.grade}</td> <td> ${item.gradeletter} </td> <td class="items">${item.sub}</td> 
-      <td class="items"><button id="deleteBtn" onclick="removeStudent(${index})">Delete</button></td>`;
-  
-      outputList.appendChild(listItem);
-    });
+    const listItem = document.createElement('tr');
+    listItem.innerHTML = `<td>${index + 1}.</td> <td class="items">${item.name}</td> <td class="items">${item.id}</td>
+     <td class="items">${item.grade}</td> <td> ${item.student_Grade} </td> <td class="items">${item.sub}</td> 
+    <td class="items"><button id="deleteBtn" onclick="removeStudent(${index})">Delete</button></td>`;
+
+    outputList.appendChild(listItem);
+  });
 
 }
 
