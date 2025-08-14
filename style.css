@@ -208,10 +208,34 @@ table tr th{
 
 }
 
+@media (max-width: 480px) {
+  #input input,
+  select {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  #btn1, #btn2 {
+    width: 100%;
+    max-width: 90%;
+
+
+  table tr th, table tr td {
+    font-size: 14px;
+    width: auto;
+  }
+
+  #input input,
+select {
+  width: 100%;
+  max-width: 33em;
+}
+
 /*make table responsive*/
 table {
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto;
   display: block;
+}
 }
