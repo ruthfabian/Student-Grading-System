@@ -13,6 +13,9 @@ let studentArray = [];
 let studentIDLibrary = {};
 
 //function to add student
+
+document.getElementById('btn1').addEventListener('click', addStudent);
+
 function addStudent(event)
 {
   event.preventDefault();
@@ -22,9 +25,22 @@ function addStudent(event)
   const studentGrade = gradeInput.value.trim();
   const studentGradeInt = parseInt(studentGrade);
   const subject = subjectInput.value;
-  let student_GradeLetter = "";
+  const student_GradeLetter = "";
 
-  switch(Math.floor(studentGradeInt/10)) {
+  //convert student input score to gradeletter usinf if else statement
+  if (studentGradeInt >= 90 && studentGradeInt <= 100) {
+    student_GradeLetter = "A";
+  } else if (studentGradeInt >= 80) {
+    student_GradeLetter = "B";
+  } else if (studentGradeInt >= 70) {
+    student_GradeLetter = "C";
+  } else if (studentGradeInt >= 60) {
+    student_GradeLetter = "D";
+  } else {
+    student_GradeLetter = "F";
+  }
+
+  /*switch(Math.floor(studentGradeInt / 10)) {
     case 0: case 1: case 2: case 3: case 4: case 5:
       student_GradeLetter = "F";
       break;
@@ -41,7 +57,22 @@ function addStudent(event)
       student_GradeLetter = "A";
       break;
   }
+*/
 
+//check for student ID uniqueness
+if(studentIDLibrary[studentId]) {
+    idMessage.innerHTML = 'This student ID already exists. Please enter a unique ID.';
+    idMessage.style.color = 'red';
+    idMessage.style.display = 'block';
+    
+    setTimeout(() => {
+      idMessage.style.display = 'none';
+    }, 3000);
+  }
+  else {
+    studentIDLibrary[studentId] = stud; // Add student ID to library for uniqueness check
+    studentArray.push(stud);
+  }
 
 //condition to create object
   if(studentName && studentId && studentGrade && student_GradeLetter && subject)
@@ -68,16 +99,6 @@ function addStudent(event)
   
   else{
     alert('Please enter all the required fields.')
-  }
-
-  if(studentIDLibrary[studentId]) {
-    idMessage.textContent = 'This student ID already exists. Please enter a unique ID.';
-    idMessage.style.color = 'red';
-    idMessage.style.display = 'block';
-  }
-  else {
-    studentIDLibrary[studentId] = stud; // Add student ID to library for uniqueness check
-    studentArray.push(stud);
   }
 }
 
@@ -127,6 +148,39 @@ function removeStudent(index) {
   displayStudent();
 }
 
+//calculate student statistics per subject
+function calculateStatistics() {
+  const subjectStats = {};
 
+  studentArray.forEach(student => {
+    const subject = student.sub;
+    const grade = parseInt(student.grade);
 
+    if (!subjectStats[subject]) {
+      subjectStats[subject] = {
+        totalStudents: 0,
+        totalGrades: 0,
+        averageGrade: 0
+      };
+    }
 
+    subjectStats[subject].totalStudents++;
+    subjectStats[subject].totalGrades += grade;
+    subjectStats[subject].averageGrade = subjectStats[subject].totalGrades / subjectStats[subject].totalStudents;
+  });
+
+  displayStatistics(subjectStats);
+}
+
+//function to display statistics
+function displayStatistics(stats) {
+  const statsContainer = document.getElementById('statisticsArea');
+  statsContainer.innerHTML = '';
+
+  for (const subject in stats) {
+    const stat = stats[subject];
+    const statItem = document.createElement('div');
+    statItem.innerHTML = `<strong>${subject}</strong>: ${stat.totalStudents} students, Average Grade: ${stat.averageGrade.toFixed(2)}`;
+    statsContainer.appendChild(statItem);
+  }
+}
