@@ -1,4 +1,4 @@
-*{
+  *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -194,21 +194,7 @@ p {
 }
 
 
-@media (max-width: 768px) {
-/*#listHeader ul li{
-font-size: 16px;
-}
-*/
-
-table tr th{
-  font-size: 16px;
-}
-
-
-
-}
-
-@media (max-width: 480px) {
+  @media (max-width: 768px) {
   #input input,
   select {
     width: 100%;
@@ -218,24 +204,24 @@ table tr th{
   #btn1, #btn2 {
     width: 100%;
     max-width: 90%;
+  }
 
 
-  table tr th, table tr td {
+
+   table tr th, table tr td {
     font-size: 14px;
     width: auto;
   }
-
-  #input input,
-select {
+  
+  #input input, select {
   width: 100%;
   max-width: 33em;
-}
+  }
 
-/*make table responsive*/
-table {
+  table {
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto;
   display: block;
-}
+  }
 }
