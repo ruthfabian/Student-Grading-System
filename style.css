@@ -165,11 +165,12 @@ p {
   cursor: pointer;
 }
 
-#stat{
-  display: flex;
+#btn2-div{
+  display:flex;
   justify-content: center;
   align-items: center;
 }
+
 
 #btn2{
   color: white ;
@@ -195,20 +196,6 @@ p {
 
 
 @media (max-width: 768px) {
-/*#listHeader ul li{
-font-size: 16px;
-}
-*/
-
-table tr th{
-  font-size: 16px;
-}
-
-
-
-}
-
-@media (max-width: 480px) {
   #input input,
   select {
     width: 100%;
