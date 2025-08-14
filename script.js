@@ -136,6 +136,45 @@ function calculateStats() {
         subjects[stu.subject].push(stu);
 
     });
+      // Loop through each subject and calculate stats
+
+    for (const subj in subjects) {
+
+        const list = subjects[subj];
+
+        let total = 0;
+
+        let highest = -Infinity;
+
+        let lowest = Infinity;
+
+        let letterCount = { A: 0, B: 0, C: 0, D: 0, F: 0 };
+
+        let passCount = 0;
+
+        let failCount = 0;
+
+        list.forEach(stu => {
+
+            total += stu.grade;
+
+            if (stu.grade > highest) highest = stu.grade;
+
+            if (stu.grade < lowest) lowest = stu.grade;
+
+            let letter = getLetterGrade(stu.grade);
+
+            letterCount[letter]++;
+
+            if (stu.grade >= 60) passCount++;
+
+            else failCount++;
+
+        });
+
+        const avg = (total / list.length).toFixed(2);
+
+        // Display per subject stats
 
   
 }
