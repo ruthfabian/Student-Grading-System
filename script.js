@@ -148,6 +148,7 @@ function removeStudent(index) {
   displayStudent();
 }
 
+
 //calculate student statistics per subject
 function calculateStatistics() {
   const subjectStats = {};
