@@ -121,6 +121,21 @@ function calculateStats() {
         statisticsArea.innerHTML = "<p>No students to calculate statistics.</p>";
         return;
     }
+    // Group students by subject
+
+    const subjects = {};
+
+    students.forEach(stu => {
+
+        if (!subjects[stu.subject]) {
+
+            subjects[stu.subject] = [];
+
+        }
+
+        subjects[stu.subject].push(stu);
+
+    });
 
   
 }
