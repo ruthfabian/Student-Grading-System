@@ -175,6 +175,29 @@ function calculateStats() {
         const avg = (total / list.length).toFixed(2);
 
         // Display per subject stats
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+
+            <h3>${subj} Statistics</h3>
+
+            <p>Average Grade: ${avg}</p>
+
+            <p>Highest Grade: ${highest}</p>
+
+            <p>Lowest Grade: ${lowest}</p>
+
+            <p>Letter Counts: A(${letterCount.A}), B(${letterCount.B}), C(${letterCount.C}), D(${letterCount.D}), F(${letterCount.F})</p>
+
+            <p>Pass: ${passCount}, Fail: ${failCount}</p>
+
+            <hr>
+
+        `;
+      
+      statisticsArea.appendChild(div);
+      }
+       
 
   
 }
