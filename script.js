@@ -136,6 +136,11 @@ function calculateStats() {
         subjects[stu.subject].push(stu);
 
     });
+
+    // Clear previous stats before recalculating
+    statisticsArea.innerHTML = "";
+    
+    
       // Loop through each subject and calculate stats
 
     for (const subj in subjects) {
