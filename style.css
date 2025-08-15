@@ -158,6 +158,10 @@ p {
   text-align: center;
 }
 
+h3 {
+  color: rgb(171, 35, 244);
+    }
+
 
 @media (max-width: 768px) {
   #input input,
