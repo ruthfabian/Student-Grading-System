@@ -107,44 +107,6 @@ table tr td{
   width: 13em;
 }
 
-
-/*
-#listHeader ul{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  list-style: none;
-}
-
-#listHeader ul li{
-  color: white;
-  font-size: 18px;
-}
-
-#outputArea{
-  justify-content: center;
-  align-items: center;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  height: auto;
-  text-align: center;
-}
-
-#outputArea ul{
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-  text-align: center;
-}
-
-#outputArea ul li{
-  color: rgb(171, 35, 244);
-  font-size: 16px;
-
-}
-*/
-
-
 p {
   color: rgb(171, 35, 244);
   font-size: 18px;
@@ -165,11 +127,12 @@ p {
   cursor: pointer;
 }
 
-#stat{
-  display: flex;
+#btn2-div{
+  display:flex;
   justify-content: center;
   align-items: center;
 }
+
 
 #btn2{
   color: white ;
@@ -185,6 +148,8 @@ p {
 }
 
 #statisticsArea{
+  display:flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding-top: 3em;
@@ -193,8 +158,12 @@ p {
   text-align: center;
 }
 
+h3 {
+  color: rgb(171, 35, 244);
+    }
 
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   #input input,
   select {
     width: 100%;
