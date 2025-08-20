@@ -39,7 +39,7 @@ function validateInput() {
     const duplicate = students.some(s => s.id === studentId.value.trim());
     if (studentId.value.trim() === "" || studentId.value <= 0) {
         idError.textContent = "Enter a valid ID.";
-        studentId.style.border = "1px solid red";
+        studentId.style.border = "";
         valid = false;
     } else if (duplicate) {
         idError.textContent = "This Student ID already exists.";
@@ -53,7 +53,7 @@ function validateInput() {
     // Grade validation
     if (studentGrade.value === "" || studentGrade.value < 0 || studentGrade.value > 100) {
         gradeError.textContent = "Grade must be between 0 and 100.";
-        studentGrade.style.border = "1px solid red";
+        studentGrade.style.border = "";
         valid = false;
     } else {
         gradeError.textContent = "";
@@ -62,7 +62,7 @@ function validateInput() {
 
     // Subject validation
     if (subject.value === "~Select Subject~") {
-        subject.style.border = "1px solid red";
+        subject.style.border = "";
         valid = false;
     } else {
         subject.style.border = "";
@@ -196,7 +196,6 @@ function calculateStats() {
 
             <p>Pass: ${passCount}, Fail: ${failCount}</p>
 
-            <hr>
 
         `;
       
